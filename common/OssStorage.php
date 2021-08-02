@@ -72,7 +72,7 @@ class OssStorage implements Storage
             ]);
 
             if ($res && ($res = $res->toArray()) && isset($res['Location'])) {
-                $ossUrl = $res['Location'] . (strpos($res['Location'], '?') ? '&id=' : '?id=') . $attachment['id'];
+                $ossUrl = $res['Location'];
                 $ossUrl = '//' . preg_replace('/^https?:\/\//', '', $ossUrl); //去掉http协议头，以//开头
                 $attachment['url'] = $ossUrl;
                 $attachment->save();

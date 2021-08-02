@@ -12,7 +12,7 @@ use tpext\builder\common\Module as builderModule;
  */
 class Module  extends baseModule
 {
-    protected $version = '1.0.1';
+    protected $version = '1.0.2';
 
     protected $name = 'builder.tencentyunoss';
 
