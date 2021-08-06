@@ -2,7 +2,6 @@
 
 namespace tencentyunoss\common;
 
-use Exception;
 use tpext\common\Module as baseModule;
 use tpext\builder\common\Module as builderModule;
 
@@ -46,7 +45,7 @@ class Module  extends baseModule
     public function install()
     {
         if (!class_exists('\\Qcloud\\Cos\\Client')) { //根据oss-sdk中某一个类是否存在来判断sdk是否已经安装
-            $this->errors[] = new Exception('<p>请使用composer安装腾讯云OSS-sdk后再安装本扩展！</p><pre>composer require qcloud/cos-sdk-v5</pre>');
+            $this->errors[] = new \Exception('<p>请使用composer安装腾讯云OSS-sdk后再安装本扩展！</p><pre>composer require qcloud/cos-sdk-v5</pre>');
             return false;
         }
 
